@@ -54,8 +54,8 @@ module.exports = ({ env }) => {
         port: env.int('DATABASE_PORT', 5432),
         database: env('DATABASE_NAME', 'd5bu9g4j39ngdb'),
         username: env('DATABASE_USERNAME', 'u1l7as8nc6sejs'),
-        password: env('DATABASE_PASSWORD', 'p5de5d8b5c827ce34897c6db204c168f87e6a53e04152e69c73477d7de6c9XXXX'),
-        ssl: env.bool('DATABASE_SSL', true) && {
+        password: env('DATABASE_PASSWORD', 'p5de5d8b5c827ce34897c6db204c168f87e6a53e04152e69c73477d7de6c9b867'),
+        ssl: env.bool('DATABASE_SSL', false) && {
           key: env('DATABASE_SSL_KEY', undefined),
           cert: env('DATABASE_SSL_CERT', undefined),
           ca: env('DATABASE_SSL_CA', undefined),
