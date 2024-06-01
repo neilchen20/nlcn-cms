@@ -2,7 +2,7 @@ const path = require('path');
 require('dotenv').config();
 
 module.exports = ({ env }) => {
-  const client = env('DATABASE_CLIENT', 'mysql');
+  const client = env('DATABASE_CLIENT', 'mysql2');
 
   const connections = {
     mysql: {
