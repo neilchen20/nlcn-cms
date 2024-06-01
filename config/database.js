@@ -3,16 +3,20 @@ require('dotenv').config();
 
 module.exports = ({ env }) => {
   const client = env('DATABASE_CLIENT', 'mysql2');
-
   const connections = {
     mysql: {
       connection: {
         connectionString: env('DATABASE_URL'),
-        host: env('DATABASE_HOST', 'localhost'),
+        // host: env('DATABASE_HOST', 'localhost'),
+        // port: env.int('DATABASE_PORT', 3306),
+        // database: env('DATABASE_NAME', 'nlcn-cms-strapi'),
+        // user: env('DATABASE_USERNAME', 'root'),
+        // password: env('DATABASE_PASSWORD', '12345678'),
+        host: env('DATABASE_HOST', 'us-cluster-east-01.k8s.cleardb.net'),
         port: env.int('DATABASE_PORT', 3306),
-        database: env('DATABASE_NAME', 'nlcn-cms-strapi'),
-        user: env('DATABASE_USERNAME', 'root'),
-        password: env('DATABASE_PASSWORD', '12345678'),
+        database: env('DATABASE_NAME', 'heroku_d1dee3f7119a899'),
+        user: env('DATABASE_USERNAME', 'bce3bb43755017'),
+        password: env('DATABASE_PASSWORD', '6bbe547b'),
         ssl: env.bool('DATABASE_SSL', false) && {
           key: env('DATABASE_SSL_KEY', undefined),
           cert: env('DATABASE_SSL_CERT', undefined),
