@@ -12,7 +12,7 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['https://www.nlcn.me','https://nlcn.me','https://admin.nlcn.me'],
+      origin: ['https://neilc.me','https://www.neilc.me','https://admin.neilc.me'],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization'],
     },
