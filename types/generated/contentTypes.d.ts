@@ -362,6 +362,38 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiHomePageHomePage extends Schema.CollectionType {
+  collectionName: 'home_pages';
+  info: {
+    singularName: 'home-page';
+    pluralName: 'home-pages';
+    displayName: 'HomePage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    HomeTitle: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'Hi\uFF0C\u6211\u662FNeil Chen\uFF0C\u4F86\u81EA\u53F0\u5317\u5E02\uFF0C\u7562\u696D\u65BC\u5FB7\u660E\u8CA1\u7D93\u79D1\u6280\u5927\u5B78\u8CC7\u8A0A\u7BA1\u7406\u5B78\u7CFB\uFF0C\u66FE\u5728\u4E09\u5546\u96FB\u8166\u80A1\u4EFD\u6709\u9650\u516C\u53F8\u64D4\u4EFB\u5BE6\u7FD2\u5DE5\u7A0B\u5E2B\uFF0C\u4E3B\u8981\u8CA0\u8CAC\u524D\u7AEF\u958B\u767C\uFF0C\u66FE\u53C3\u8207\u958B\u767C\u6D88\u9632\u7F72\u548C\u6D88\u9632\u55AE\u4F4D\u7684\u7DB2\u9801\u5100\u8868\u677F\uFF0C\u4E26\u53D7\u5230\u76F8\u95DC\u4EBA\u54E1\u7684\u80AF\u5B9A\u3002\u76EE\u524D\u5728\u6FB3\u5275\u79D1\u6280\u80A1\u4EFD\u6709\u9650\u516C\u53F8\u64D4\u4EFB\u524D\u7AEF\u5DE5\u7A0B\u5E2B\u4E00\u8077\uFF0C\u4E5F\u662F\u8CA0\u8CAC\u524D\u7AEF\u958B\u767C\u3002 \u6211\u7684\u6280\u8853\u4E3B\u8981\u5305\u62ECVue.js\u3001.net\u3001Bootstrap\u3001Element Plus\u3001Three.js\u3001DataTables\uFF0C\u76EE\u524D\u6B63\u5728\u81EA\u5B78\u90E8\u7F72Strapi\u3001Three.js\u7B49\u6280\u8853\uFF0C\u4E26\u900F\u904E\u5BE6\u4F5C\u5C07\u73FE\u5728\u7684\u7DB2\u9801\u5167\u5BB9\u8207\u90E8\u7F72\u7684Strapi CMS\u4E32\u63A5\uFF0C\u53EF\u5728Strapi\u7DE8\u8F2F\u5F8C\u986F\u793A\u5728<a href="/"><button>neilc.me</button></a>\u3002'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -798,6 +830,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::home-page.home-page': ApiHomePageHomePage;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
