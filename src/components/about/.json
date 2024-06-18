@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_about_",
+  "info": {
+    "displayName": "廠區",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "FactoryArea": {
+      "type": "string",
+      "required": true
+    },
+    "Place": {
+      "type": "string"
+    }
+  }
+}

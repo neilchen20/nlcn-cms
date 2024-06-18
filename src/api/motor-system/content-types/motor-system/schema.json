@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "motor_systems",
+  "info": {
+    "singularName": "motor-system",
+    "pluralName": "motor-systems",
+    "displayName": "motorSystem",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Brand": {
+      "type": "string"
+    },
+    "carID": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "use": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_cards",
+  "info": {
+    "displayName": "card",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "svg": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "types": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

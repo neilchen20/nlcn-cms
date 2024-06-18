@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "todos",
+  "info": {
+    "singularName": "todo",
+    "pluralName": "todos",
+    "displayName": "Todo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "_softDeletedAt": {
+      "type": "datetime",
+      "configurable": false,
+      "writable": false,
+      "visible": false,
+      "private": true
+    },
+    "_softDeletedById": {
+      "type": "integer",
+      "configurable": false,
+      "writable": false,
+      "visible": false,
+      "private": true
+    },
+    "_softDeletedByType": {
+      "type": "string",
+      "configurable": false,
+      "writable": false,
+      "visible": false,
+      "private": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "content": {
+      "type": "text"
+    }
+  }
+}

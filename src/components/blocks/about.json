@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_blocks_abouts",
+  "info": {
+    "displayName": "about",
+    "icon": "cube",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "factoryArea": {
+      "type": "string",
+      "required": true
+    },
+    "region": {
+      "type": "string",
+      "required": true
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.card",
+      "required": true
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "direction": {
+      "type": "enumeration",
+      "enum": [
+        "L",
+        "R"
+      ],
+      "required": true,
+      "default": "L"
+    }
+  }
+}

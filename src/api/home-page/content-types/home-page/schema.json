@@ -4,17 +4,60 @@
   "info": {
     "singularName": "home-page",
     "pluralName": "home-pages",
-    "displayName": "HomePage"
+    "displayName": "HomePage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
+    "_softDeletedAt": {
+      "type": "datetime",
+      "configurable": false,
+      "writable": false,
+      "visible": false,
+      "private": true
+    },
+    "_softDeletedById": {
+      "type": "integer",
+      "configurable": false,
+      "writable": false,
+      "visible": false,
+      "private": true
+    },
+    "_softDeletedByType": {
+      "type": "string",
+      "configurable": false,
+      "writable": false,
+      "visible": false,
+      "private": true
+    },
     "HomeTitle": {
       "type": "text",
       "required": true,
-      "default": "Hi，我是Neil Chen，來自台北市，畢業於德明財經科技大學資訊管理學系，曾在三商電腦股份有限公司擔任實習工程師，主要負責前端開發，曾參與開發消防署和消防單位的網頁儀表板，並受到相關人員的肯定。目前在澳創科技股份有限公司擔任前端工程師一職，也是負責前端開發。 我的技術主要包括Vue.js、.net、Bootstrap、Element Plus、Three.js、DataTables，目前正在自學部署Strapi、Three.js等技術，並透過實作將現在的網頁內容與部署的Strapi CMS串接，可在Strapi編輯後顯示在<a href=\"/\"><button>neilc.me</button></a>。"
+      "default": "Hi，我是Neil Chen，來自台北市，畢業於德明財經科技大學資訊管理學系，曾在三商電腦股份有限公司擔任實習工程師，主要負責前端開發，曾參與開發消防署和消防單位的網頁儀表板，並受到相關人員的肯定。目前在澳創科技股份有限公司擔任前端工程師一職，也是負責前端開發。 我的技術主要包括Vue.js、.net、Bootstrap、Element Plus、Three.js、DataTables，目前正在自學部署Strapi、Three.js等技術，並透過實作將現在的網頁內容與部署的Strapi CMS串接，可在Strapi編輯後顯示在<a href=\"/\"><button>neilc.me</button></a>。",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        },
+        "translate": {
+          "translate": "translate"
+        }
+      }
+    },
+    "PagePreview": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "customField",
+      "customField": "plugin::pagepreview.page-preview"
     }
   }
 }
