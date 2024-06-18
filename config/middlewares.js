@@ -8,21 +8,16 @@ module.exports = [
         useDefaults: true,
         directives: {
           "connect-src": ["'self'", "https:", "ws:", "wss:", "http:"],
-          "img-src": [
-            "'self'",
-            "data:",
-            "blob:",
-          ],
+          "img-src": ["'self'", "data:", "blob:",],
           "media-src": ["'self'", "data:", "blob:"],
           'frame-src':["'self'","https://neilc.me/"],
-          'frame-ancestors':  null,
+          'frame-ancestors': null,
           upgradeInsecureRequests: null,
         },
       },
       frameguard:  false,
     },
   },
-  'strapi::security',
   'strapi::cors',
   {
     name: 'strapi::cors',
