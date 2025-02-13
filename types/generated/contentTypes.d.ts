@@ -362,188 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiHomePageHomePage extends Schema.CollectionType {
-  collectionName: 'home_pages';
-  info: {
-    singularName: 'home-page';
-    pluralName: 'home-pages';
-    displayName: 'HomePage';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    _softDeletedAt: Attribute.DateTime & Attribute.Private;
-    _softDeletedById: Attribute.Integer & Attribute.Private;
-    _softDeletedByType: Attribute.String & Attribute.Private;
-    HomeTitle: Attribute.Text &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-        translate: {
-          translate: 'translate';
-        };
-      }> &
-      Attribute.DefaultTo<'Hi\uFF0C\u6211\u662FNeil Chen\uFF0C\u4F86\u81EA\u53F0\u5317\u5E02\uFF0C\u7562\u696D\u65BC\u5FB7\u660E\u8CA1\u7D93\u79D1\u6280\u5927\u5B78\u8CC7\u8A0A\u7BA1\u7406\u5B78\u7CFB\uFF0C\u66FE\u5728\u4E09\u5546\u96FB\u8166\u80A1\u4EFD\u6709\u9650\u516C\u53F8\u64D4\u4EFB\u5BE6\u7FD2\u5DE5\u7A0B\u5E2B\uFF0C\u4E3B\u8981\u8CA0\u8CAC\u524D\u7AEF\u958B\u767C\uFF0C\u66FE\u53C3\u8207\u958B\u767C\u6D88\u9632\u7F72\u548C\u6D88\u9632\u55AE\u4F4D\u7684\u7DB2\u9801\u5100\u8868\u677F\uFF0C\u4E26\u53D7\u5230\u76F8\u95DC\u4EBA\u54E1\u7684\u80AF\u5B9A\u3002\u76EE\u524D\u5728\u6FB3\u5275\u79D1\u6280\u80A1\u4EFD\u6709\u9650\u516C\u53F8\u64D4\u4EFB\u524D\u7AEF\u5DE5\u7A0B\u5E2B\u4E00\u8077\uFF0C\u4E5F\u662F\u8CA0\u8CAC\u524D\u7AEF\u958B\u767C\u3002 \u6211\u7684\u6280\u8853\u4E3B\u8981\u5305\u62ECVue.js\u3001.net\u3001Bootstrap\u3001Element Plus\u3001Three.js\u3001DataTables\uFF0C\u76EE\u524D\u6B63\u5728\u81EA\u5B78\u90E8\u7F72Strapi\u3001Three.js\u7B49\u6280\u8853\uFF0C\u4E26\u900F\u904E\u5BE6\u4F5C\u5C07\u73FE\u5728\u7684\u7DB2\u9801\u5167\u5BB9\u8207\u90E8\u7F72\u7684Strapi CMS\u4E32\u63A5\uFF0C\u53EF\u5728Strapi\u7DE8\u8F2F\u5F8C\u986F\u793A\u5728<a href="/"><button>neilc.me</button></a>\u3002'>;
-    PagePreview: Attribute.String &
-      Attribute.CustomField<'plugin::pagepreview.page-preview'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToMany',
-      'api::home-page.home-page'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiMotorSystemMotorSystem extends Schema.CollectionType {
-  collectionName: 'motor_systems';
-  info: {
-    singularName: 'motor-system';
-    pluralName: 'motor-systems';
-    displayName: 'motorSystem';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Brand: Attribute.String;
-    carID: Attribute.String;
-    description: Attribute.Text;
-    use: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::motor-system.motor-system',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::motor-system.motor-system',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    _softDeletedAt: Attribute.DateTime & Attribute.Private;
-    _softDeletedById: Attribute.Integer & Attribute.Private;
-    _softDeletedByType: Attribute.String & Attribute.Private;
-  };
-}
-
-export interface ApiPagePage extends Schema.CollectionType {
-  collectionName: 'pages';
-  info: {
-    singularName: 'page';
-    pluralName: 'pages';
-    displayName: 'Page';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    slug: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    blocks: Attribute.DynamicZone<['blocks.about']> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    _softDeletedAt: Attribute.DateTime & Attribute.Private;
-    _softDeletedById: Attribute.Integer & Attribute.Private;
-    _softDeletedByType: Attribute.String & Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::page.page',
-      'oneToMany',
-      'api::page.page'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiTodoTodo extends Schema.CollectionType {
-  collectionName: 'todos';
-  info: {
-    singularName: 'todo';
-    pluralName: 'todos';
-    displayName: 'Todo';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    _softDeletedAt: Attribute.DateTime & Attribute.Private;
-    _softDeletedById: Attribute.Integer & Attribute.Private;
-    _softDeletedByType: Attribute.String & Attribute.Private;
-    title: Attribute.String;
-    email: Attribute.Email & Attribute.Required;
-    content: Attribute.Text;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::todo.todo', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::todo.todo', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -1602,6 +1420,226 @@ export interface PluginTranslateBatchTranslateJob
   };
 }
 
+export interface ApiHomePageHomePage extends Schema.CollectionType {
+  collectionName: 'home_pages';
+  info: {
+    singularName: 'home-page';
+    pluralName: 'home-pages';
+    displayName: 'HomePage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    _softDeletedAt: Attribute.DateTime & Attribute.Private;
+    _softDeletedById: Attribute.Integer & Attribute.Private;
+    _softDeletedByType: Attribute.String & Attribute.Private;
+    HomeTitle: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+        translate: {
+          translate: 'translate';
+        };
+      }> &
+      Attribute.DefaultTo<'Hi\uFF0C\u6211\u662FNeil Chen\uFF0C\u4F86\u81EA\u53F0\u5317\u5E02\uFF0C\u7562\u696D\u65BC\u5FB7\u660E\u8CA1\u7D93\u79D1\u6280\u5927\u5B78\u8CC7\u8A0A\u7BA1\u7406\u5B78\u7CFB\uFF0C\u66FE\u5728\u4E09\u5546\u96FB\u8166\u80A1\u4EFD\u6709\u9650\u516C\u53F8\u64D4\u4EFB\u5BE6\u7FD2\u5DE5\u7A0B\u5E2B\uFF0C\u4E3B\u8981\u8CA0\u8CAC\u524D\u7AEF\u958B\u767C\uFF0C\u66FE\u53C3\u8207\u958B\u767C\u6D88\u9632\u7F72\u548C\u6D88\u9632\u55AE\u4F4D\u7684\u7DB2\u9801\u5100\u8868\u677F\uFF0C\u4E26\u53D7\u5230\u76F8\u95DC\u4EBA\u54E1\u7684\u80AF\u5B9A\u3002\u76EE\u524D\u5728\u6FB3\u5275\u79D1\u6280\u80A1\u4EFD\u6709\u9650\u516C\u53F8\u64D4\u4EFB\u524D\u7AEF\u5DE5\u7A0B\u5E2B\u4E00\u8077\uFF0C\u4E5F\u662F\u8CA0\u8CAC\u524D\u7AEF\u958B\u767C\u3002 \u6211\u7684\u6280\u8853\u4E3B\u8981\u5305\u62ECVue.js\u3001.net\u3001Bootstrap\u3001Element Plus\u3001Three.js\u3001DataTables\uFF0C\u76EE\u524D\u6B63\u5728\u81EA\u5B78\u90E8\u7F72Strapi\u3001Three.js\u7B49\u6280\u8853\uFF0C\u4E26\u900F\u904E\u5BE6\u4F5C\u5C07\u73FE\u5728\u7684\u7DB2\u9801\u5167\u5BB9\u8207\u90E8\u7F72\u7684Strapi CMS\u4E32\u63A5\uFF0C\u53EF\u5728Strapi\u7DE8\u8F2F\u5F8C\u986F\u793A\u5728<a href="/"><button>neilc.me</button></a>\u3002'>;
+    PagePreview: Attribute.String &
+      Attribute.CustomField<'plugin::pagepreview.page-preview'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToMany',
+      'api::home-page.home-page'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiMotorSystemMotorSystem extends Schema.CollectionType {
+  collectionName: 'motor_systems';
+  info: {
+    singularName: 'motor-system';
+    pluralName: 'motor-systems';
+    displayName: 'motorSystem';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Brand: Attribute.String;
+    carID: Attribute.String;
+    description: Attribute.Text;
+    use: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::motor-system.motor-system',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::motor-system.motor-system',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    _softDeletedAt: Attribute.DateTime & Attribute.Private;
+    _softDeletedById: Attribute.Integer & Attribute.Private;
+    _softDeletedByType: Attribute.String & Attribute.Private;
+  };
+}
+
+export interface ApiPagePage extends Schema.CollectionType {
+  collectionName: 'pages';
+  info: {
+    singularName: 'page';
+    pluralName: 'pages';
+    displayName: 'Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    blocks: Attribute.DynamicZone<['blocks.about']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    _softDeletedAt: Attribute.DateTime & Attribute.Private;
+    _softDeletedById: Attribute.Integer & Attribute.Private;
+    _softDeletedByType: Attribute.String & Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::page.page',
+      'oneToMany',
+      'api::page.page'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiProjectProject extends Schema.CollectionType {
+  collectionName: 'projects';
+  info: {
+    singularName: 'project';
+    pluralName: 'projects';
+    displayName: 'Projects';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    projectTitle: Attribute.String;
+    projectDescription: Attribute.Text;
+    projectLink: Attribute.Text;
+    projectImg: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    projectDate: Attribute.Date;
+    projectHighLight: Attribute.Boolean;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    _softDeletedAt: Attribute.DateTime & Attribute.Private;
+    _softDeletedById: Attribute.Integer & Attribute.Private;
+    _softDeletedByType: Attribute.String & Attribute.Private;
+  };
+}
+
+export interface ApiTodoTodo extends Schema.CollectionType {
+  collectionName: 'todos';
+  info: {
+    singularName: 'todo';
+    pluralName: 'todos';
+    displayName: 'emailRecord';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    _softDeletedAt: Attribute.DateTime & Attribute.Private;
+    _softDeletedById: Attribute.Integer & Attribute.Private;
+    _softDeletedByType: Attribute.String & Attribute.Private;
+    title: Attribute.String;
+    email: Attribute.Email & Attribute.Required;
+    content: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::todo.todo', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::todo.todo', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1612,10 +1650,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::home-page.home-page': ApiHomePageHomePage;
-      'api::motor-system.motor-system': ApiMotorSystemMotorSystem;
-      'api::page.page': ApiPagePage;
-      'api::todo.todo': ApiTodoTodo;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -1636,6 +1670,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::translate.batch-translate-job': PluginTranslateBatchTranslateJob;
+      'api::home-page.home-page': ApiHomePageHomePage;
+      'api::motor-system.motor-system': ApiMotorSystemMotorSystem;
+      'api::page.page': ApiPagePage;
+      'api::project.project': ApiProjectProject;
+      'api::todo.todo': ApiTodoTodo;
     }
   }
 }

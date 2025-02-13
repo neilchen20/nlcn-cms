@@ -22,7 +22,7 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['https://neilc.me','https://www.neilc.me','https://admin.neilc.me','http://localhost:1337'],
+      origin: ['https://neilc.me','https://www.neilc.me','https://admin.neilc.me','http://localhost:1337','http://localhost:5173'],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization'],
     },

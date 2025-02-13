@@ -23,6 +23,7 @@
     "@strapi/plugin-users-permissions": "4.24.4",
     "@strapi/strapi": "^4.5.6",
     "@webbio/strapi-plugin-scheduler": "^1.0.6",
+    "axios": "^1.7.7",
     "braces": "^3.0.3",
     "dotenv": "^16.4.5",
     "findup-sync": "^5.0.0",
