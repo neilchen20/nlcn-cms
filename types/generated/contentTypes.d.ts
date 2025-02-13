@@ -1580,17 +1580,22 @@ export interface ApiProjectProject extends Schema.CollectionType {
     singularName: 'project';
     pluralName: 'projects';
     displayName: 'Projects';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
+    _softDeletedAt: Attribute.DateTime & Attribute.Private;
+    _softDeletedById: Attribute.Integer & Attribute.Private;
+    _softDeletedByType: Attribute.String & Attribute.Private;
     projectTitle: Attribute.String;
     projectDescription: Attribute.Text;
     projectLink: Attribute.Text;
     projectImg: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     projectDate: Attribute.Date;
     projectHighLight: Attribute.Boolean;
+    projectSkill: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1606,9 +1611,6 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
-    _softDeletedAt: Attribute.DateTime & Attribute.Private;
-    _softDeletedById: Attribute.Integer & Attribute.Private;
-    _softDeletedByType: Attribute.String & Attribute.Private;
   };
 }
 

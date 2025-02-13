@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-02-13T04:32:57.617Z"
+    "x-generation-date": "2025-02-13T06:30:32.720Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2182,6 +2182,16 @@
           "data": {
             "type": "object",
             "properties": {
+              "_softDeletedAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "_softDeletedById": {
+                "type": "integer"
+              },
+              "_softDeletedByType": {
+                "type": "string"
+              },
               "projectTitle": {
                 "type": "string"
               },
@@ -2212,14 +2222,7 @@
               "projectHighLight": {
                 "type": "boolean"
               },
-              "_softDeletedAt": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "_softDeletedById": {
-                "type": "integer"
-              },
-              "_softDeletedByType": {
+              "projectSkill": {
                 "type": "string"
               }
             }
@@ -2275,6 +2278,16 @@
       "Project": {
         "type": "object",
         "properties": {
+          "_softDeletedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "_softDeletedById": {
+            "type": "integer"
+          },
+          "_softDeletedByType": {
+            "type": "string"
+          },
           "projectTitle": {
             "type": "string"
           },
@@ -2916,6 +2929,9 @@
           "projectHighLight": {
             "type": "boolean"
           },
+          "projectSkill": {
+            "type": "string"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -2961,16 +2977,6 @@
                 }
               }
             }
-          },
-          "_softDeletedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "_softDeletedById": {
-            "type": "integer"
-          },
-          "_softDeletedByType": {
-            "type": "string"
           }
         }
       },
